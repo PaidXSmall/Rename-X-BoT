@@ -1,4 +1,4 @@
-class Txt(object):
+class Text(object):
     # part of text configuration
     START_TXT = """<b>Hᴀɪ {} 👋,
 Tʜɪs Is Aɴ Aᴅᴠᴀɴᴄᴇᴅ Aɴᴅ Yᴇᴛ Pᴏᴡᴇʀꜰᴜʟ Rᴇɴᴀᴍᴇ Bᴏᴛ
