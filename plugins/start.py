@@ -57,7 +57,7 @@ async def start(client, message):
         ],[
         InlineKeyboardButton('🎛️ Aʙᴏᴜᴛ', callback_data='about'),
         InlineKeyboardButton('🛠️ Hᴇʟᴩ', callback_data='help')
-    ]])
+    ]]))
         return
     if id:
         if old == True:
