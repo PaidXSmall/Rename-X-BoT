@@ -99,7 +99,7 @@ async def cb_handler(client, query: CallbackQuery):
     data = query.data 
     if data == "start":
         await query.message.edit_text(
-            text=f"Start"
+            text=Text.START_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup = InlineKeyboardMarkup([[
                 InlineKeyboardButton("👨‍💻 Dᴇᴠꜱ 👨‍💻", callback_data='dev')
@@ -113,8 +113,7 @@ async def cb_handler(client, query: CallbackQuery):
         )
     elif data == "help":
         await query.message.edit_text(
-            text=f"""Hello {wish} {message.from_user.first_name } \n\n
-	I am file renamer bot, Please sent any teew filename to rename it"""
+            text=Text.HELP_TXT,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
                 #⚠️ don't change source code & source link ⚠️ #
@@ -128,8 +127,7 @@ async def cb_handler(client, query: CallbackQuery):
         )
     elif data == "about":
         await query.message.edit_text(
-            text=f"""Hello {wish} {message.from_user.first_name } \n\n
-	I am file renamer bot, Please sent any telegram**Document Or Videofilename to rename it"""
+            text=Text.ABOUT_TXT.format(client.mention),
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup([[
                 #⚠️ don't change source code & source link ⚠️ #
@@ -143,8 +141,7 @@ async def cb_handler(client, query: CallbackQuery):
         )
     elif data == "dev":
         await query.message.edit_text(
-            text=f"""Hello {wish} {message.from_user.first_name } \n\n
-	I am fbot, Please sent any telegram**Document Or Video** and enter new filename to rename it"""
+            text=Text.DEV_TXT,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
                 #⚠️ don't change source code & source link ⚠️ #
