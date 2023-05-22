@@ -199,7 +199,7 @@ async def send_doc(client, message):
         daily = user_deta["daily"]
         user_type = user_deta["usertype"]
     except:
-        await message.reply_text(text=f"**Sᴏʀʀʏ Bʀᴜʜ Wᴇ'ʀᴇ Cᴜʀʀᴇɴʟʏ Fᴀᴄɪɴɢ Sᴇᴠᴇʀ Issᴜᴇs Pʟᴇᴀsᴇ Tʀʏ Lᴀᴛᴇʀ ᴏʀ Tʀʏ Iɴ Yᴏᴜʀ Aʟᴛᴇʀɴᴀᴛɪᴠᴇ Tᴇʟᴇɢʀᴀᴍ Iᴅ**",
+        await message.reply_text(text=f"**Sᴏʀʀʏ Bʀᴜʜ Wᴇ'ʀᴇ Cᴜʀʀᴇɴʟʏ Fᴀᴄɪɴɢ Sᴇᴠᴇʀ Issᴜᴇs Pʟᴇᴀsᴇ Tʀʏ Lᴀᴛᴇʀ ᴏʀ Tʀʏ Iɴ Yᴏᴜʀ Aʟᴛᴇʀɴᴀᴛɪᴠᴇ Tᴇʟᴇɢʀᴀᴍ Iᴅ**")
         return 
 
     c_time = time.time()
