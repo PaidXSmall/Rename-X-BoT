@@ -131,7 +131,7 @@ async def doc(bot, update):
         await ms.edit("```Trying To Upload```")
         c_time = time.time()
         try:
-            await bot.send_document(update.from_user.id, document=file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("```Trying To Uploading```",  ms, c_time))
+            await bot.send_document(update.from_user.id, document=file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("```Trying To Uploading```",  ms, c_time), reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('❤️‍🔥 ᴊᴏɪɴ ᴛᴏ ᴄʜᴀɴɴᴇʟ ❤️‍🔥', url=f"https://t.me/PeterXCloud") ] ] ))
             await ms.delete()
             os.remove(file_path)
         except Exception as e:
