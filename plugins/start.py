@@ -5,7 +5,7 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 import time
 from pyrogram import Client, filters
 from pyrogram.types import (
-    InlineKeyboardButton, InlineKeyboardMarkup)
+    InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery)
 import humanize
 from helper.progress import humanbytes
 
@@ -49,13 +49,15 @@ async def start(client, message):
 	I am file renamer bot, Please sent any telegram**Document Or Video** and enter new filename to rename it"""
         await message.reply_photo(photo=LAZY_PIC,
                                 caption=txt,
-                                reply_markup=InlineKeyboardMarkup(
-                                      [[InlineKeyboardButton("🔺 Update Channel 🔺", url="https://t.me/LazyDeveloper")],
-                                      [InlineKeyboardButton("🦋 Subscribe us 🦋", url="https://youtube.com/@LazyDeveloperr")],
-                                      [InlineKeyboardButton("Support Group", url='https://t.me/LazyPrincessSupport'),
-                                      InlineKeyboardButton("Movie Channel", url='https://t.me/real_MoviesAdda2')],
-                                      [InlineKeyboardButton("☕ Buy Me A Coffee ☕", url='https://p.paytm.me/xCTH/vo37hii9')]
-                                      ]))
+                                reply_markup = InlineKeyboardMarkup([[
+        InlineKeyboardButton("👨‍💻 Dᴇᴠꜱ 👨‍💻", callback_data='dev')
+        ],[
+        InlineKeyboardButton('📯 Uᴩᴅᴀᴛᴇꜱ', url='https://t.me/PYRO_BOTZ'),
+        InlineKeyboardButton('💁‍♂️ Sᴜᴩᴩᴏʀᴛ', url='https://t.me/PYRO_BOTZ_CHAT')
+        ],[
+        InlineKeyboardButton('🎛️ Aʙᴏᴜᴛ', callback_data='about'),
+        InlineKeyboardButton('🛠️ Hᴇʟᴩ', callback_data='help')
+    ]])
         return
     if id:
         if old == True:
@@ -91,7 +93,79 @@ async def start(client, message):
                                           [InlineKeyboardButton("☕ Buy Me A Coffee ☕", url='https://p.paytm.me/xCTH/vo37hii9')]
                                           ]))
     
-
+#callbacks-------------
+@Client.on_callback_query()
+async def cb_handler(client, query: CallbackQuery):
+    data = query.data 
+    if data == "start":
+        await query.message.edit_text(
+            text=f"""Hello {wish} {message.from_user.first_name } \n\n
+	I am file renamer bot, Please sent any telegram**Document Or Video** and enter new filename to rename it"""
+            disable_web_page_preview=True,
+            reply_markup = InlineKeyboardMarkup([[
+                InlineKeyboardButton("👨‍💻 Dᴇᴠꜱ 👨‍💻", callback_data='dev')
+                ],[
+                InlineKeyboardButton('📯 Uᴩᴅᴀᴛᴇꜱ', url='https://t.me/PYRO_BOTZ'),
+                InlineKeyboardButton('💁‍♂️ Sᴜᴩᴩᴏʀᴛ', url='https://t.me/PYRO_BOTZ_CHAT')
+                ],[
+                InlineKeyboardButton('🎛️ Aʙᴏᴜᴛ', callback_data='about'),
+                InlineKeyboardButton('🛠️ Hᴇʟᴩ', callback_data='help')
+            ]])
+        )
+    elif data == "help":
+        await query.message.edit_text(
+            text=f"""Hello {wish} {message.from_user.first_name } \n\n
+	I am file renamer bot, Please sent any teew filename to rename it"""
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup([[
+                #⚠️ don't change source code & source link ⚠️ #
+                InlineKeyboardButton("❣️ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ", url="https://github.com/TEAM-PYRO-BOTZ/PYRO-RENAME-BOT")
+                ],[
+                InlineKeyboardButton("❤️‍🔥 Hᴏᴡ Tᴏ Uꜱᴇ❤️‍🔥", url='https://youtu.be/4ZfvMSDXBVg')
+                ],[
+                InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
+                InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
+            ]])            
+        )
+    elif data == "about":
+        await query.message.edit_text(
+            text=f"""Hello {wish} {message.from_user.first_name } \n\n
+	I am file renamer bot, Please sent any telegram**Document Or Videofilename to rename it"""
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup([[
+                #⚠️ don't change source code & source link ⚠️ #
+                InlineKeyboardButton("❣️ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ", url="https://github.com/TEAM-PYRO-BOTZ/PYRO-RENAME-BOT")
+                ],[
+                InlineKeyboardButton("🖥️ Hᴏᴡ Tᴏ Mᴀᴋᴇ", url="https://youtu.be/GfulqsSnTv4")
+                ],[
+                InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
+                InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
+            ]])            
+        )
+    elif data == "dev":
+        await query.message.edit_text(
+            text=f"""Hello {wish} {message.from_user.first_name } \n\n
+	I am fbot, Please sent any telegram**Document Or Video** and enter new filename to rename it"""
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup([[
+                #⚠️ don't change source code & source link ⚠️ #
+                InlineKeyboardButton("❣️ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ", url="https://github.com/TEAM-PYRO-BOTZ/PYRO-RENAME-BOT")
+                ],[
+                InlineKeyboardButton("🖥️ Hᴏᴡ Tᴏ Mᴀᴋᴇ", url="https://youtu.be/GfulqsSnTv4")
+                ],[
+                InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
+                InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
+            ]])          
+        )
+    elif data == "close":
+        try:
+            await query.message.delete()
+            await query.message.reply_to_message.delete()
+            await query.message.continue_propagation()
+        except:
+            await query.message.delete()
+            await query.message.continue_propagation()
+				  
 
 @Client.on_message((filters.private & (filters.document | filters.audio | filters.video)) | filters.channel & (filters.document | filters.audio | filters.video))
 async def send_doc(client, message):
